@@ -6,7 +6,7 @@ angular.module "artistDirective", []
       render = (data) ->
         svg = d3.select ".song-chart svg"
 
-        svg.select(".dislike").remove()
+        svg.select(".empty").remove()
 
         votes = [
           {
