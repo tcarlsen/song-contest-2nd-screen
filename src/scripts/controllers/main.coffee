@@ -1,5 +1,5 @@
 angular.module "mainCtrl", []
-  .controller "mainController", ($scope, $http, $cookieStore, socket, uuid) ->
+  .controller "mainController", ($scope, $http, $cookieStore, $timeout, socket, uuid) ->
     config =
       apiUrl: "10.86.233.62:8000"
       event: "mgp2015"
@@ -44,6 +44,7 @@ angular.module "mainCtrl", []
           $scope.activeSong = response.data.nowplaying_index || 0
         ), (data) ->
           console.log "fuck"
+          $timeout getArtistList, 1000
 
     getArtistList()
 
