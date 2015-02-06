@@ -18,7 +18,9 @@ body {
 }
 
 a {
+  cursor: pointer;
   color: darken($white, 10%);
+
   &:hover {
     color: darken($white, 20%);
   }
@@ -175,6 +177,25 @@ img {
 .positive-votes {
   height: 20px;
   background: $green;
+}
+
+.result-list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid $white;
+  text-align: center;
+  padding-top: 20px;
+
+  toplist-view {
+    display: inline-block;
+    text-align: left;
+    background: #000;
+    padding: 10px;
+  }
 }
 
 .nav-view {
