@@ -1,3 +1,6 @@
+@import "normalize";
+@import "skeleton";
+
 $white: #ffffff;
 $darkgrey: #666666;
 $green: #5cb85c;
@@ -50,7 +53,7 @@ img {
 .facebook-share {
   position: absolute;
   top: 12.5px;
-  right: 0;
+  right: 4px;
   padding: 3px 8px;
   border-radius: 3px;
   font-weight: 600;
@@ -203,4 +206,43 @@ i.fa::before {
 
 .song-chart h5 {
   font-size: 2rem;
+}
+
+@media (max-width: 950px){
+  .song-chart {
+    svg {
+      float: none;
+    }
+    .columns {
+      text-align: center;
+      float: none;
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+}
+
+@media (max-width: 605px){
+  .voter {
+    height: auto
+  }
+  .scribblelive {
+    min-height: 600px;
+    padding: 2em;
+  }
+
+}
+@media (max-width: 550px){
+  .contest.logo {
+    display: none;
+  }
+  .votebar {
+    float: none;
+    width: 100%;
+  }
+}
+@media (max-width: 400px){
+  .voter {
+    padding: 2em;
+  }
 }
