@@ -46,9 +46,8 @@ angular.module "artistDirective", []
             .enter()
               .append "path"
               .attr "class", (d) -> "#{d.data.class} slice"
-          slices
-            .transition().duration(1000)
-              .attr "d", arc
+
+          slices.attr "d", arc
 
       scope.$watch "render", (value) ->
         render scope.songs if value isnt 0
