@@ -14,6 +14,17 @@ body {
   height: 55px;
 }
 
+a {
+  color: darken($white, 10%);
+  &:hover {
+    color: darken($white, 20%);
+  }
+}
+
+img {
+  vertical-align: bottom;
+}
+
 .berlingske-logo {
   position: absolute;
   top: 10px;
@@ -53,11 +64,10 @@ body {
 
 .main-container {
   width: 100vw;
-  height: 100vh;
 }
 
 .voter {
-  height: 100vh;
+  height: calc(100vh - 55px);
   padding: 20px 50px;
 }
 
@@ -84,6 +94,7 @@ body {
   color: $white;
   width: 50%;
   border-radius: 0;
+
 }
 
 .vote-btn.like {
@@ -104,13 +115,23 @@ body {
   }
 }
 
-.slice.like {
-  fill: $green;
+.vote-btn.inactive {
+  background: $darkgrey;
+  border-color: darken($darkgrey, 10%);
 }
 
-.slice.dislike {
-  fill: $red;
+.slice {
+  &.like {
+    fill: $green;
+  }
+  &.dislike {
+    fill: $red;
+  }
+  &.empty {
+    fill: $darkgrey;
+  }
 }
+
 
 .nav.up {
   border-bottom: 2px solid $darkgrey;
@@ -162,4 +183,24 @@ body {
   border-left: 2px solid $white;
   padding: 20px 0 20px 50px;
   margin-left: 0;
+  overflow: hidden;
+}
+
+i.fa::before {
+  vertical-align: middle;
+}
+
+.nav {
+  text-align: center;
+}
+
+.artistview {
+  padding-bottom: 1em;
+  h5, h3 {
+    margin-bottom: .2em;
+  }
+}
+
+.song-chart h5 {
+  font-size: 2rem;
 }
