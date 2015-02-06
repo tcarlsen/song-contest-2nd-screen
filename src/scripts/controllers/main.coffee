@@ -3,7 +3,7 @@ angular.module "mainCtrl", []
     config =
       apiUrl: "10.86.233.62:8000"
       event: "mgp2015"
-      logo: "http://www.dr.dk/NR/rdonlyres/497EED22-D0D9-4B3D-BA8A-75BDAE68B27A/6031766/74e99fcceda84b92aa9392b702420c4b_Melodi_gp_logo620.png"
+      logo: "/img/mgp2015logo.png"
     socket = socket.connet(config.apiUrl, config.event)
     cookie = null
 
