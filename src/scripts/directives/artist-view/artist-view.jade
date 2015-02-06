@@ -12,7 +12,7 @@ div.row.artistview
   div.seven.columns
     h3 {{songs[activeSong].artist}}
     h5 {{songs[activeSong].title}}
-    a(ng-click="toggleReview()") Læs Berlingskes anmelddelse &nbsp;
+    a(ng-click="toggleReview()") Læs Berlingskes anmeldelse &nbsp;
       i.fa.fa-play(ng-class="{'fa-rotate-90': showReview}")
     div.review(ng-show="showReview") {{songs[activeSong].berlingske_review}}
     div.row.song-chart
