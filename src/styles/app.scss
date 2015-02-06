@@ -142,6 +142,14 @@ img {
   }
 }
 
+.review {
+  position: absolute;
+  background: $darkgrey;
+  padding: 10px;
+  width: 300px;
+  max-width: calc(100vw - 80px);
+  z-index: 10;
+}
 
 .nav.up {
   border-bottom: 2px solid $darkgrey;

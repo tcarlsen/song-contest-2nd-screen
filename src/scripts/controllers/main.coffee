@@ -27,6 +27,9 @@ angular.module "mainCtrl", []
 
       $scope.render++
 
+    $scope.toggleReview = ->
+      $scope.showReview = if $scope.showReview is true then false else true
+
     socket.on "nowplaying", (data) ->
       if data.active is false
         $scope.activeSong = 0
