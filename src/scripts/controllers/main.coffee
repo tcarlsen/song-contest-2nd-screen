@@ -10,6 +10,7 @@ angular.module "mainCtrl", []
     $scope.logo = config.logo
     $scope.songs = null
     $scope.activeSong = null
+    $scope.render = 0
 
     $scope.vote = (vote) ->
       socket.emit vote,
@@ -17,13 +18,31 @@ angular.module "mainCtrl", []
         event: config.event
         session: cookie
 
-    socket.on "nowplaying", (data) ->
-      for key, value of $scope.songs
-        if value.id is data.song
-          $scope.activeSong = key
-          $scope.$apply()
+    $scope.navigate = (direction) ->
+      $scope.activeSong -= 1 if direction is "up"
+      $scope.activeSong += 1 if direction is "down"
 
-          break
+      $scope.activeSong = 0 if $scope.activeSong < 0
+      $scope.activeSong = $scope.songs.length - 1 if $scope.activeSong is $scope.songs.length
+
+      $scope.render++
+
+    socket.on "nowplaying", (data) ->
+      if data.active is false
+        $scope.activeSong = 0
+        $scope.$apply()
+      else if data.active_all
+        $scope.activeSong = $scope.songs.length - 1
+        $scope.$apply()
+      else
+
+        for key, value of $scope.songs
+          if value.id is data.song
+            $scope.activeSong = key
+            $scope.render++
+            $scope.$apply()
+
+            break
 
     socket.on "newrating", (data) ->
       for key, value of $scope.songs
@@ -31,6 +50,7 @@ angular.module "mainCtrl", []
           $scope.songs[key].likes = data.likes
           $scope.songs[key].dislikes = data.dislikes
           $scope.songs[key].score = data.score
+          $scope.render++
           $scope.$apply()
 
           break
@@ -42,6 +62,7 @@ angular.module "mainCtrl", []
         .then ((response) ->
           $scope.songs = response.data.songs
           $scope.activeSong = response.data.nowplaying_index || 0
+          $scope.render++
         ), (data) ->
           console.log "fuck"
           $timeout getArtistList, 1000

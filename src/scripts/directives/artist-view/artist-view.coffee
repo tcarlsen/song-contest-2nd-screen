@@ -46,6 +46,6 @@ angular.module "artistDirective", []
           .transition().duration(1000)
             .attr "d", arc
 
-      scope.$watch "songs", (newData, oldData) ->
-        render newData if newData isnt null
+      scope.$watch "render", (value) ->
+        render scope.songs if value isnt 0
       , true
