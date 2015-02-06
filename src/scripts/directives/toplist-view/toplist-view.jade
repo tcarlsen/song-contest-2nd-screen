@@ -1,4 +1,4 @@
-h1 Læsernes top 3 lige nu
+h3 Læsernes top 3 lige nu
 ol.top-3-list
   li(ng-repeat="song in songs | orderBy:'score':true | limitTo:3")
     | {{song.artist}} - "{{song.title}}"
