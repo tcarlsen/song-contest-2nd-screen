@@ -1,5 +1,5 @@
 nav.nav.up
-  span.arrow-up
+  img(src="/img/arrow_up.png" ng-click="navigate('up')").arrow-up
 div.row
   div.four.columns
     img.artist-image(ng-src="{{songs[activeSong].image}}").u-max-full-width
@@ -16,4 +16,4 @@ div.row
       svg
       h5 {{songs[activeSong].score}}% giver tommlen op  
 nav.nav.down
-  span.arrow-down
+  img(src="/img/arrow_down.png" ng-click="navigate('down')").arrow-down
