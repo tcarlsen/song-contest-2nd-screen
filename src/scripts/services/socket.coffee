@@ -3,6 +3,7 @@ angular.module "socketService", []
     connet: (api, event) ->
       socket = io "//#{api}"
 
-      socket.on "connect", -> console.log "Up and running"
+      socket.on "connect", ->
+        console.log "Up and running"
+        socket.emit "join", event
       socket.on "disconnect", -> console.log "Down and stopped"
-      socket.emit "join", event
