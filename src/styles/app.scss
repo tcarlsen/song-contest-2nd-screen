@@ -123,6 +123,11 @@ img {
 .vote-btn.inactive {
   background: $darkgrey;
   border-color: darken($darkgrey, 10%);
+
+  &:hover {
+    background: $darkgrey;
+    border-color: darken($darkgrey, 10%);
+  }
 }
 
 .slice {
