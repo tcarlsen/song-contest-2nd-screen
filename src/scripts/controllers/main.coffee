@@ -30,15 +30,24 @@ angular.module "mainCtrl", []
     socket.on "nowplaying", (data) ->
       if data.active is false
         $scope.activeSong = 0
+
+        for key, value of $scope.songs
+          $scope.songs[key].active = 0
+
         $scope.$apply()
       else if data.active_all
         $scope.activeSong = $scope.songs.length - 1
+
+        for key, value of $scope.songs
+          $scope.songs[key].active = 1
+
         $scope.$apply()
       else
 
         for key, value of $scope.songs
           if value.id is data.song
             $scope.activeSong = key
+            $scope.songs[key].active = 1
             $scope.render++
             $scope.$apply()
 
