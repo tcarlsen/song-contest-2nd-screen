@@ -4,6 +4,4 @@ angular.module "socketService", []
       socket = io "//#{api}"
 
       socket.on "connect", ->
-        console.log "Up and running"
         socket.emit "join", event
-      socket.on "disconnect", -> console.log "Down and stopped"
