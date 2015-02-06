@@ -1,0 +1,37 @@
+doctype html
+html(lang="en" ng-app="songContest" ng-controller="mainController")
+head
+  meta(charset="UTF-8")
+  title Melodi Grand Prix
+  link(rel="stylesheet", href="/bower_components/skeleton/css/normalize.css")
+  link(rel="stylesheet", href="/bower_components/skeleton/css/skeleton.css")
+  link(rel="stylesheet", href="/bower_components/font-awesome/css/font-awesome.css")
+  link(rel="stylesheet", href="/styles.min.css")
+body
+  header.header
+    a.berlingske-logo Berlingske
+    a.contest.logo
+      img(ng-src="{{logo}}")
+    .facebook-share
+      a(href="javascript:void(0);" title="Del på Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location), 'FacebookShare','status=0,toolbar=0,menubar=1,resizable=1,width=480,height=240');") Del på Facebook
+  div.main-container
+    div.row
+      div.eight.columns.voter
+        div.row
+          div.six.columns
+            h2 Stem med her
+          div.six.columns
+            p Giv tommelfingeren op eller ned til aftenens numre, så holder vi styr på hvilke numre, vi bedst kan lide.
+        artist-view
+        toplist-view
+      div.four.columns.scribblelive
+        p Musikredaktør Lars Rix, Grand Prix-entusiast Jonas Steenbæk Christoffersen leder dig igennem aftenen.
+        iframe(src="http://embed.scribblelive.com/Embed/v7.aspx?Id=578621&ThemeId=17678&overlay=false" width="100%" height="100%" frameborder="0")
+      
+  script(src="/bower_components/angular/angular.js")
+  script(src="/bower_components/angular-touch/angular-touch.js")
+  script(src="/bower_components/angular-cookies/angular-cookies.js")
+  script(src="/bower_components/angular-animate/angular-animate.js")
+  script(src="/bower_components/d3/d3.js")
+  script(src="/lib/socket.io.js")
+  script(src="/scripts.min.js")

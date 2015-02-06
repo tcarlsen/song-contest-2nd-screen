@@ -1,0 +1,165 @@
+$white: #ffffff;
+$darkgrey: #666666;
+$green: #5cb85c;
+$red: #d9534f;
+
+body {
+  background: #000;
+  color: #fff;
+}
+
+.header {
+  position: relative;
+  border-bottom: 3px solid $white;
+  height: 55px;
+}
+
+.berlingske-logo {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  display: block;
+  text-indent: -9999px;
+  width: 141px;
+  height: 35px;
+  background: url(/img/logo_b_300px.svg) left bottom no-repeat #14143c;
+}
+
+.contest.logo {
+  position: absolute;
+  top: 0;
+  left: 160px;
+  display: block;
+
+  img {
+    height: 55px;
+  }
+}
+
+.facebook-share {
+  position: absolute;
+  top: 12.5px;
+  right: 0;
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-weight: 600;
+  background-color: rgb(76, 102, 164);
+
+  a {
+    color: $white;
+    text-decoration: none;
+  }
+}
+
+.main-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.voter {
+  height: 100vh;
+  padding: 20px 50px;
+}
+
+.artist-image {
+  margin-bottom: 20px;
+  border: 2px solid $white;
+}
+
+.song-chart {
+  margin-top: 10px;
+
+  svg {
+    float: left;
+    width: 200px;
+    height: 100px;
+  }
+
+  h3 {
+  }
+}
+
+.vote-btn {
+  float: left;
+  color: $white;
+  width: 50%;
+  border-radius: 0;
+}
+
+.vote-btn.like {
+  background: $green;
+  border-color: darken($green, 10%);
+
+  &:hover {
+    background: darken($green, 10%);
+  }
+}
+
+.vote-btn.dislike {
+  background: $red;
+  border-color: darken($red, 10%);
+
+  &:hover {
+    background: darken($red, 10%);
+  }
+}
+
+.slice.like {
+  fill: $green;
+}
+
+.slice.dislike {
+  fill: $red;
+}
+
+.nav.up {
+  border-bottom: 2px solid $darkgrey;
+  margin-bottom: 25px;
+}
+
+/* .arrow-up {
+
+} */
+
+.nav.down {
+  border-top: 2px solid $darkgrey;
+}
+
+/* .arrow-down {
+
+} */
+
+.top-3-list {
+
+}
+
+.votebar {
+  position: relative;
+  float: right;
+  width: 250px;
+  height: 20px;
+  background: $red;
+
+  strong {
+    position: absolute;
+    top: -2px;
+    left: 5px;
+    color: #000;
+  }
+}
+
+.positive-votes {
+  height: 20px;
+  background: $green;
+}
+
+.nav-view {
+  display: block;
+}
+
+.scribblelive {
+  height: calc(100vh - 55px);
+  border-left: 2px solid $white;
+  padding: 20px 0 20px 50px;
+  margin-left: 0;
+}

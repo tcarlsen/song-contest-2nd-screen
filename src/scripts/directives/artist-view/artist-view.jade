@@ -1,0 +1,19 @@
+nav.nav.up
+  span.arrow-up
+div.row
+  div.four.columns
+    img.artist-image(ng-src="{{songs[activeSong].image}}").u-max-full-width
+    button(ng-click="vote('like')" ng-class="{'inactive': songs[activeSong].active==0}").vote-btn.like
+      i.fa.fa-thumbs-o-up.fa-2x
+    button(ng-click="vote('dislike')" ng-class="{'inactive': songs[activeSong].active==0}").vote-btn.dislike
+      i.fa.fa-thumbs-o-down.fa-2x
+  div.six.columns
+    h2 {{songs[activeSong].artist}}
+    h4 {{songs[activeSong].title}}
+    a Læs Berlingskes anmelddelse &nbsp;
+      i.fa.fa-play
+    div.song-chart
+      svg
+      h5 {{songs[activeSong].score}}% giver tommlen op  
+nav.nav.down
+  span.arrow-down

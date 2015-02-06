@@ -1,0 +1,8 @@
+h1 Læsernes top 3 lige nu
+ol.top-3-list
+  li(ng-repeat="song in songs | limitTo:3")
+    | {{song.artist}} - "{{song.title}}"
+    div.votebar
+      div.positive-votes(style="width:{{song.score}}%;")
+      strong {{song.score}}% giver tommlen op
+a Se hele stillingen
