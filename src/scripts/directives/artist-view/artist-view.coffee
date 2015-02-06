@@ -26,9 +26,14 @@ angular.module "artistDirective", []
           .endAngle 90 * (pi / 180)
           .value (d) -> d.value
 
-        chart = svg.append "g"
+        chart = svg.selectAll ".chart"
           .data [votes]
-          .attr "transform", "translate(#{radius}, #{radius})"
+
+        chart
+          .enter()
+            .append "g"
+            .attr "class", "chart"
+            .attr "transform", "translate(#{radius}, #{radius})"
 
         slices = chart.selectAll ".slice"
           .data pie
@@ -41,5 +46,6 @@ angular.module "artistDirective", []
           .transition().duration(1000)
             .attr "d", arc
 
-      scope.$watchCollection "songs", (newData) ->
+      scope.$watch "songs", (newData, oldData) ->
         render newData if newData isnt null
+      , true
