@@ -1,9 +1,9 @@
 angular.module "mainCtrl", []
   .controller "mainController", ($scope, $http, $cookieStore, $timeout, socket, uuid) ->
     config =
-      apiUrl: "10.86.233.62:8000"
-      event: "mgp2015"
-      logo: "/img/mgp2015logo.png"
+      apiUrl: "ec2-54-73-143-168.eu-west-1.compute.amazonaws.com"
+      event: "mgp2015-children"
+      logo: "/img/mgp2015.png"
     socket = socket.connet(config.apiUrl, config.event)
     cookie = null
 
@@ -17,6 +17,7 @@ angular.module "mainCtrl", []
         song: $scope.songs[$scope.activeSong].id
         event: config.event
         session: cookie
+      $scope.songs[$scope.activeSong].vote = vote
 
     $scope.navigate = (direction) ->
       $scope.activeSong -= 1 if direction is "up"

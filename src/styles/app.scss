@@ -99,15 +99,20 @@ img {
   color: $white;
   width: 50%;
   border-radius: 0;
+  &:hover, &:focus {
+    color: $white;
+  }
 
 }
 
 .vote-btn.like {
   background: $green;
   border-color: darken($green, 10%);
-
-  &:hover {
-    background: darken($green, 10%);
+  &.faded {
+    background: darken($green, 20%);
+  }
+  &:hover, &.voted {
+    background: lighten($green, 10%);
   }
 }
 
@@ -115,8 +120,12 @@ img {
   background: $red;
   border-color: darken($red, 10%);
 
-  &:hover {
-    background: darken($red, 10%);
+  &.faded {
+    background: darken($red, 20%);
+  }
+
+  &:hover, &.voted {
+    background: lighten($red, 10%);
   }
 }
 
